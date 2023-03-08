@@ -1,0 +1,36 @@
+CREATE TABLE  Movies (
+    id INTEGER PRIMARY KEY,
+    Title TEXT NOT NULL,
+    Movie_genre TEXT NOT NULL,
+    Movie_Artist TEXT NOT NULL,
+    Artist_Skills TEXT NOT NULL,
+    ROLE TEXT NOT NULL
+);
+
+INSERT INTO Movies VALUES 
+(1,"Avatar","Sci Fiction","Samuel Henry","flyier , attacker","Hero,alien"),
+(2, 'Igloo', 'Love drama',"Anju Kurian","romance,comedy","Heroine,lover"),
+(3, "Thunivu",'Money heist',"Ajith Kumar","bikeracer,fighter","Hero,villan"),
+(4, "varisu",'family drama',"vijay","dancer,singer","Hero,comedian"),
+(5, "rrr",'revolt',"ntr","musician,director","secondHero,cameo");
+
+
+
+
+CREATE TABLE  Review (
+    id INTEGER,
+    User_Name TEXT NOT NULL,
+    Rating float NOT NULL,
+    Review TEXT NOT NULL
+    );
+insert into review VALUES
+(1,"sanjay",8.5,"blockbuster"),
+(2,"prasanth",6.3,"average"),
+(3,"sharmila",9.9,"blockbuster"),
+(4,"ajay",3.5,"flop"),
+(5,"jay",5.5,"average");
+
+
+select Title,Movie_genre,Movie_Artist,Artist_Skills,ROLE,User_Name,Rating,Review from movies 
+inner join review 
+on movies.id = review.id; 
